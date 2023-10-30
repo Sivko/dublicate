@@ -1,0 +1,18 @@
+
+.imageTrack {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 14.4%;
+  top: 50%;
+  transform: translate(0%, -50%); 
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+.imageTrack > .image {
+  width: 100wv;
+  height: 58.5vmin;
+  object-fit: cover;
+  border-radius: 65px;
+  object-position: 100% center;
+}

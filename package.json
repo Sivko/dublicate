@@ -1,0 +1,38 @@
+{
+  "name": "moscowproj",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.40",
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "@splinetool/react-spline": "^2.2.6",
+    "gsap": "^3.12.2",
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "swiper": "^10.3.1",
+    "three": "^0.157.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/three": "^0.157.2",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "autoprefixer": "^10",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "13.5.6",
+    "eslint-config-prettier": "^9.0.0",
+    "postcss": "^8",
+    "prettier": "3.0.3",
+    "tailwindcss": "^3",
+    "typescript": "^5.2.2"
+  }
+}
