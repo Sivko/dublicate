@@ -23,6 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
+      {/* <body className="flex min-h-screen flex-col relative bg-black"> */}
       <body className="flex min-h-screen flex-col relative bg-black">
         {/* <div className='text-white'>{JSON.stringify(detectMobile(headers().get('user-agent') || ""))}</div> */}
         <div id="gradient1" className="fixed top-0 left-0 right-0 bottom-0">
@@ -42,7 +43,9 @@ export default function RootLayout({
             <Menu />
           </header>
            */}
-        {children}
+        {/* <div className=' overflow-auto  h-full'> */}
+          {children}
+        {/* </div> */}
         {/* <Footer /> */}
         {/* </div> */}
       </body>

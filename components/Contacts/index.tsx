@@ -5,9 +5,9 @@ export default function Contacts() {
 
   return (
     <>
-      <div className="min-h-[500px] h-screen pt-[40px] pr-[38px] pl-[42px]">
+      <div className="min-h-[500px] h-screen">
         <div className="relative flex justify-start flex-col rounded-[60px] w-full h-full bg-black z-10">
-          <div className="text-white text-[36px] font-[400] opacity-50 mb-[50px] pt-[65px] pl-[69px] pr-[68px]">Контакт</div>
+          <div className="text-white text-[36px] font-[400] opacity-50 mb-[50px]">Контакт</div>
           <div className="flex justify-between items-end mb-[103px] pl-[69px] pr-[68px]">
             <div className="text-white text-[117.584px] font-[400] leading-[85px] indent-[-7px]">
               <p>Москва —</p>

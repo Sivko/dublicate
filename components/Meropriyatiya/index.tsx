@@ -76,24 +76,18 @@ export default function Activity({ title, text, tags }: {
 
   }, []);
 
-  const arr = [1, 2, 3];
+  const arr = [1, 2, 3, 4];
 
   return (
-    <div id="wrapper" className="relative">
-      <div className="text-white text-[30px] leading-[39px] text-center flex flex-col justify-between z-10 h-screen top-[5vh] sticky">
-        <div className="absolute flex flex-col justify-center items-center gap-[10px] right-[200px] top-0 bottom-0 mt-auto mb-auto">
-          <div className="w-[4px] rounded-[30px] h-[40px] bg-white" />
-          <div className="w-[4px] rounded-[30px] h-[40px] bg-white" />
-          <div className="w-[4px] rounded-[30px] h-[40px] bg-white" />
-        </div>
+    <div className="relative">
+      <div className="text-white text-[30px] leading-[39px] text-center flex flex-col justify-between z-10 h-screen top-[0] sticky bg-black">
         <div className="flex justify-center items-center gap-[4px] top-[5vh]">
           {title}
         </div>
-        <div className="flex justify-center items-center gap-[4px] mb-[100px]">{
+        <div className="flex justify-center items-center gap-[4px] mb-[66px]">{
           tags.map((e, index) => (<div key={index} className="pt-[10px] pb-[10px] pl-[20px] pr-[20px] bg-[rgba(109,124,255,0.20)] text-white text-[20px] font-[400] rounded-[74px] opacity-90 hover:opacity-100 transition-all cursor-pointer">{e.title}</div>))
         }</div>
       </div>
-
       {arr.map((elem, index) => (<div key={index} className={`flex flex-col justify-center relative min-h-screen pt-[88px] pb-[84px] ${index}`} ref={e => elements.current[index] = e}>
         <div className="absolute w-full">
           <Image className="m-auto mt-[200px]" src="/img.png" width={500} height={500} alt="" />

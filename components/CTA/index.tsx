@@ -15,31 +15,38 @@ export default function CTA() {
   const { preview, url } = { preview: "/w.png", url: "#" }
   const frameContent: any = useRef();
 
-  useEffect(() => {
-    if (frameContent.current) {
-      const tl = gsap.timeline({
-        // paused: true, 
-        scrollTrigger: {
-          // trigger: section,
-          pin: true,
-          anticipatePin: 1,
-          scrub: 1,
-          start: "top top",
-          end: "+=1000"
-        }
-      })
-        .to(frameContent.current, { opacity: 0 })
-        .set(frameContent.current, { display: 'none' })
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (frameContent.current) {
+  //     const tl = gsap.timeline({ 
+  //       scrollTrigger: {
+  //         pin: true,
+  //         anticipatePin: 1,
+  //         scrub: 1,
+  //         start: "top top",
+  //         end: "+=10"
+  //       }
+  //     })
+  //       .to(frameContent.current, { opacity: 0 })
+  //       .set(frameContent.current, { display: 'none', pointerEvents: 'none' })
+  //   }
+  // }, [])
+
+  // useEffect(() => {
+  //   gsap.to(frameContent.current, {
+  //     scrollTrigger: {
+  //       scrub: 1,
+  //       start: "top top",
+  //       end: "+=1000"
+  //     },
+  //     opacity: 0, display: 'none', pointerEvents: 'none'
+
+  //   })
+  // }, [])
 
   return (<>
-    <FrameScrollVideo />
-
     <div ref={frameContent} className="content pl-[40px] pr-[78px] fixed top-0 bottom-0 left-0 right-0 bg-[#000000c7]">
       <div className="relative min-h-[500px] h-screen">
         <header className="flex justify-center w-full items-start pt-[35px]">
-          {/* <Logo /> */}
           <Menu />
         </header>
         <div className="flex gap-[93px] mt-[calc(50vh-80px-113px)]">
@@ -57,13 +64,11 @@ export default function CTA() {
         </div>
         <div className="absolute left-0 bottom-[60px] w-[384px] h-[198px]">
           <div className="relative">
-            {/* <Video preview="/w.png" url="#" /> */}
             <div className="h-[13px] w-[13px] bg-red-600 rounded-full absolute top-[-13px] right-[-13px] z-10" />
 
             {preview ? (<div className="relative cursor-pointer overflow-hidden rounded-[10px] h-full w-full">
               <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-[rgb(5,4,35)] from-[8.8%] via-[rgba(5,4,35,0.28)] via-[44.1%] to-[#060523] to-[136%]" />
               <Image src={preview} width={700} height={500} className="w-full " alt={""} />
-              {/* <Image src={'/play.svg'} width={35} height={35} className="absolute top-0 right-0 left-0 bottom-0 m-auto" alt={""} /> */}
               <span className="absolute bottom-[15px] text-[20px] left-[25px] text-white">Прямая трансляция</span>
             </div>) : (<></>)}
           </div>
@@ -84,10 +89,8 @@ export default function CTA() {
             </defs>
           </svg>
         </div>
-        {/* <div className="w-[2135px] absolute right-[-46%] top-[36.5%]">
-          <Image className="w-full" width={2135} height={1371} alt="" src={'/fp.png'} />
-        </div> */}
       </div>
     </div>
+    {/* </div> */}
   </>)
 }
