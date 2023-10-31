@@ -80,7 +80,7 @@ export default function Activity({ title, text, tags }: {
 
   return (
     <div className="relative">
-      <div className="text-white text-[30px] leading-[39px] text-center flex flex-col justify-between z-10 h-screen top-[0] sticky bg-black">
+      <div className="text-white text-[30px] leading-[39px] text-center flex flex-col justify-between z-10 h-screen top-[0] sticky bg-black rounded-[60px]">
         <div className="flex justify-center items-center gap-[4px] top-[5vh]">
           {title}
         </div>
@@ -89,8 +89,9 @@ export default function Activity({ title, text, tags }: {
         }</div>
       </div>
       {arr.map((elem, index) => (<div key={index} className={`flex flex-col justify-center relative min-h-screen pt-[88px] pb-[84px] ${index}`} ref={e => elements.current[index] = e}>
-        <div className="absolute w-full">
+        <div className="absolute w-full z-10">
           <Image className="m-auto mt-[200px]" src="/img.png" width={500} height={500} alt="" />
+          {/* <div className="w-[100px] h-[100px] bg-red-400" /> */}
         </div>
         <div className={`meroprInfo text-[140px] font-[400] text-center z-10 left-0 right-0 bottom-0 top-0 text-white`}>{text}</div>
         {/* <div className="absolute max-w-[600px] flex justify-center items-center m-auto left-0 right-0 top-0 bottom-0">

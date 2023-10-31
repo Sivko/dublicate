@@ -47,7 +47,7 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
     }
     console.log(index, "setFrameIndex")
     // debugger
-    if (index>1) {
+    if (index>2) {
       gsap.to(ctaRef.current, {
         opacity: 0
       })
@@ -132,6 +132,22 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
         yoyo: true,
         margin: "40 40 40 40",
         borderRadius: '60px',
+        // height: "calc(100vh-80px)"
+        height: "calc(100vh - 80px)"
+      })
+      gsap.to('canvas', {
+        borderRadius: '0 0 60px 60px',
+      })
+
+    } else {
+      gsap.to('#wrapper', {
+        yoyo: true,
+        margin: "0",
+        borderRadius: '0',
+        height: "100vh"
+      })
+      gsap.to('canvas', {
+        borderRadius: '0 0 0 0',
       })
     }
     // console.log(frameIndex);
@@ -144,7 +160,7 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
       <div ref={ctaRef} className='fixed top-0 bottom-0 left-0 right-0 opacity-50 text-white z-10 pointer-events-none'>
         <CTA />
       </div>
-      <canvas alpha="true" className="bg-white h-[1200px] rounded-b-[60px]" ref={canvasRef} />
+      <canvas alpha="true" className="bg-white h-[100vh]" ref={canvasRef} />
       {/* <div className='absolute top-[8000px] w-full'>
         <div className='lorem opacity-0 h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
           <div className='text-center w-full'>
