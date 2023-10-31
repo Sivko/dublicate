@@ -38,7 +38,7 @@ export default function Home() {
     <CTA />
 
     {/* <DotRing /> */}
-    <Building />
+    {/* <Building /> */}
     <div className="min-h-[500px] h-auto">
       <Activity title="Мероприятия" text="Познавательные" tags={[{ title: "Тег 1", url: "#" }, { title: "Тег 2", url: "#" }, { title: "Тег 3", url: "#" }]} />
       {/* <Activity title="Мероприятия" text="Познавательные" tags={[{ title: "Тег 1", url: "#" }, { title: "Тег 2", url: "#" }, { title: "Тег 3", url: "#" }]} >

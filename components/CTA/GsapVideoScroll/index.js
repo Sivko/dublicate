@@ -53,7 +53,7 @@ export default function GsapVideoScroll() {
       snap: 'frame',
       ease: 'none',
       scrollTrigger: {
-        scrub: 1.8,
+        scrub: true,
         pin: true,
         trigger: '#home',
       },

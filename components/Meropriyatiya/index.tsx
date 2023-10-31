@@ -11,6 +11,7 @@ import "./style.css"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
@@ -47,7 +48,7 @@ export default function Activity({ title, text, tags }: {
     };
 
     function goToSection(section: any, anim?: any, i?: number) {
-      console.log(section.classList[section.classList.length-1],"SEEC")
+      console.log(section.classList[section.classList.length - 1], "SEEC")
       if (scrolling.enabled) { // skip if a scroll tween is in progress
         scrolling.disable();
         gsap.to(window, {
@@ -75,22 +76,34 @@ export default function Activity({ title, text, tags }: {
 
   }, []);
 
-  const arr = [1, 2, 3, 4];
+  const arr = [1, 2, 3];
 
   return (
     <div id="wrapper" className="relative">
-      <div className="text-white text-[30px] leading-[39px] text-center top-[5vh] bottom-[500px] sticky">{title}</div>
+      <div className="text-white text-[30px] leading-[39px] text-center flex flex-col justify-between z-10 h-screen top-[5vh] sticky">
+        <div className="absolute flex flex-col justify-center items-center gap-[10px] right-[200px] top-0 bottom-0 mt-auto mb-auto">
+          <div className="w-[4px] rounded-[30px] h-[40px] bg-white" />
+          <div className="w-[4px] rounded-[30px] h-[40px] bg-white" />
+          <div className="w-[4px] rounded-[30px] h-[40px] bg-white" />
+        </div>
+        <div className="flex justify-center items-center gap-[4px] top-[5vh]">
+          {title}
+        </div>
+        <div className="flex justify-center items-center gap-[4px] mb-[100px]">{
+          tags.map((e, index) => (<div key={index} className="pt-[10px] pb-[10px] pl-[20px] pr-[20px] bg-[rgba(109,124,255,0.20)] text-white text-[20px] font-[400] rounded-[74px] opacity-90 hover:opacity-100 transition-all cursor-pointer">{e.title}</div>))
+        }</div>
+      </div>
 
       {arr.map((elem, index) => (<div key={index} className={`flex flex-col justify-center relative min-h-screen pt-[88px] pb-[84px] ${index}`} ref={e => elements.current[index] = e}>
-        <div className={`meroprInfo text-[140px] font-[400] text-center z-10 left-0 right-0 bottom-0 top-0 text-white`}>{text}</div>
-        <div className="absolute max-w-[600px] flex justify-center items-center m-auto left-0 right-0 top-0 bottom-0">
-          Lorem text
+        <div className="absolute w-full">
+          <Image className="m-auto mt-[200px]" src="/img.png" width={500} height={500} alt="" />
         </div>
+        <div className={`meroprInfo text-[140px] font-[400] text-center z-10 left-0 right-0 bottom-0 top-0 text-white`}>{text}</div>
+        {/* <div className="absolute max-w-[600px] flex justify-center items-center m-auto left-0 right-0 top-0 bottom-0">
+          Lorem text
+        </div> */}
       </div>
       ))}
-      <div className="flex justify-center items-center gap-[4px] bottom-[5vh] sticky">{
-        tags.map((e, index) => (<div key={index} className="pt-[10px] pb-[10px] pl-[20px] pr-[20px] bg-[rgba(109,124,255,0.20)] text-white text-[20px] font-[400] rounded-[74px] opacity-90 hover:opacity-100 transition-all cursor-pointer">{e.title}</div>))
-      }</div>
     </div>
   )
 }
