@@ -47,7 +47,7 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
     }
     console.log(index, "setFrameIndex")
     // debugger
-    if (index>2) {
+    if (index > 20) {
       gsap.to(ctaRef.current, {
         opacity: 0
       })
@@ -56,6 +56,11 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
         opacity: 1
       })
     }
+
+    // if (index > 200) gsap.to('#frame1', { opacity: 1, position: 'fixed', zIndex: 1, top: 0, left: 0, duration: 600 })
+    // if (index > 300) gsap.to('#frame2', { opacity: 1, position: 'fixed', zIndex: 1, top: 0, left: 0, duration: 600 })
+    // if (index > 400) gsap.to('#frame3', { opacity: 1, position: 'fixed', zIndex: 1, top: 0, left: 0, duration: 600 })
+    // console.log(index,"indexindexindex");
     setFrameIndex(index);
   };
 
@@ -67,21 +72,6 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
   };
 
   useEffect(() => {
-
-    // if (ctaRef.current) {
-    //   const tl = gsap.timeline({ 
-    //     scrollTrigger: {
-    //       trigger: canvasRef.current,
-    //       pin: true,
-    //       anticipatePin: 1,
-    //       scrub: 1,
-    //       start: "top top",
-    //       end: "+=10"
-    //     }
-    //   })
-    //     .to(ctaRef.current, { opacity: 0 })
-    //     .set(ctaRef.current, { display: 'none', pointerEvents: 'none' })
-    // }
 
     document.querySelectorAll('.lorem').forEach(e => {
 
@@ -160,22 +150,22 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
       <div ref={ctaRef} className='fixed top-0 bottom-0 left-0 right-0 opacity-50 text-white z-10 pointer-events-none'>
         <CTA />
       </div>
-      <canvas alpha="true" className="bg-white h-[100vh]" ref={canvasRef} />
-      {/* <div className='absolute top-[8000px] w-full'>
-        <div className='lorem opacity-0 h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
+      <canvas alpha="true" className="bg-black h-[100vh]" ref={canvasRef} />
+      {/* <div className='absolute top-[800px] w-full'>
+        <div id="frame1" className='lorem h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
           <div className='text-center w-full'>
             <p>Эффект полного </p>
             <p>погружения</p>
           </div>
         </div>
-        <div className='lorem opacity-0 h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
+        <div id="frame2" className='lorem h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
           <div className='text-center w-full'>
             <p>Незабываемый </p>
             <p>зрительский</p>
             <p>опыт</p>
           </div>
         </div>
-        <div className='lorem opacity-0 h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
+        <div id="frame3" className='lorem h-screen z-10 text-[118px] flex justify-center items-center  text-white '>
           <div className='text-center w-full'>
             <p>Цифровое пространство  </p>
           </div>
