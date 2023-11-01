@@ -36,7 +36,7 @@ export default function Home() {
     zoom: 5,
   };
 
-  if (loading<59) {
+  if (loading<60) {
     return (<Loader loading={loading} setLoading={setLoading} />)
   }
 
