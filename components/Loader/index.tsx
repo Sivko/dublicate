@@ -21,10 +21,10 @@ export default function Loader({ loading, setLoading }: { loading: any, setLoadi
       console.log(i)
       img.src = getCurrentFrame(i);
       // if (i == 99) {
-      img.onload = (e:any) => {
-        const lorem = e.currentTarget.src.split('/')  
-        lorem[lorem.length-1].replace('.png','')
-        setLoading((prev: any)=> Number(lorem[lorem.length-1].replace('.png','')) > prev ? Number(lorem[lorem.length-1].replace('.png','')) : prev)
+      img.onload = (e: any) => {
+        const lorem = e.currentTarget.src.split('/')
+        lorem[lorem.length - 1].replace('.png', '')
+        setLoading((prev: any) => Number(lorem[lorem.length - 1].replace('.png', '')) > prev ? Number(lorem[lorem.length - 1].replace('.png', '')) : prev)
       }
 
       // }
@@ -32,8 +32,15 @@ export default function Loader({ loading, setLoading }: { loading: any, setLoadi
     // }
   }, [])
 
- 
-  return (<div className="fixed w-full h-screen flex justify-center items-center text-white">
-    Загрузка {loading}
+
+  return (<div className="w-full h-screen flex justify-center items-center text-white relative">
+    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="60" viewBox="0 0 90 60" fill="none">
+      <path d="M50.9105 41C51.543 40.625 52.1755 40.25 52.8081 39.75V60H46.9889V0C47.6214 0 48.2539 0.125 48.8865 0.125V22.125C49.519 22 50.1515 21.875 50.784 21.75V41H50.9105ZM27.3809 33.75C26.7484 34.25 26.1159 34.75 25.4834 35.25V4.375C24.8509 4.625 24.2183 5 23.5858 5.375V60H29.405V53.375C28.7725 53.375 28.1399 53.25 27.5074 53.125L27.3809 33.75ZM58.7537 21.125C58.1212 21.125 57.4887 21.125 56.8562 21.125V1.5C56.2236 1.375 55.5911 1.125 54.9586 1V60H60.6513V36.625C60.0187 36.75 59.3862 37 58.7537 37.25V21.125ZM3.97782 43.5C3.34531 43.5 2.71279 43.375 2.08028 43.25V31.25C1.06825 34.5 0.435733 37.875 0.182727 41.25C0.182727 41.75 0.182727 42.25 0.0562236 42.75C-0.0702796 43.25 0.0562236 44 0.0562236 44.625V60H6.00187V49.125C5.36936 49.375 4.73684 49.75 4.10433 50.125L3.97782 43.5ZM19.6642 39.125C19.0317 39.5 18.3992 39.875 17.6402 40.25V9.125C17.0077 9.625 16.3751 10.125 15.7426 10.75V60H21.5618V50.75C20.9293 50.375 20.2967 50.125 19.6642 49.875V39.125ZM74.4401 25.625C73.8076 25.25 73.1751 24.875 72.5426 24.625V9.125C71.91 8.625 71.2775 8.125 70.645 7.75V60H76.4642V38.625C75.8316 38.25 75.1991 38 74.5666 37.625V25.625H74.4401ZM43.0673 24C42.4348 24.25 41.8023 24.5 41.1698 24.875V0.125C40.5372 0.125 39.9047 0.25 39.2722 0.375V60H45.0914V45.5L43.1938 47.125V24H43.0673ZM89.747 40.75C89.241 39.875 88.6085 39.125 88.1024 38.375V31.25C87.5964 29.5 86.9639 27.875 86.0784 26.125V60H90V41.5L89.747 40.75ZM35.2241 28C34.5916 28.375 33.9591 28.875 33.3266 29.25V1.5C32.694 1.625 32.0615 1.875 31.429 2.125V60H37.2482V51.375C36.6156 51.75 35.9831 52 35.3506 52.375L35.2241 28ZM82.1568 42.875V31.625C81.5243 31 80.8918 30.375 80.2593 29.875V16.625C79.6267 15.875 78.9942 15.125 78.3617 14.375V60H84.1809V44.875C83.5483 44.125 82.9158 43.5 82.1568 42.875ZM11.821 42.625C11.1885 42.875 10.556 43 9.92347 43.125V16.625C9.29096 17.5 8.53194 18.375 7.89942 19.25V60H13.7186V48.125C13.0861 48 12.4535 48 11.6945 48V42.625H11.821ZM66.5969 22.375C65.9644 22.25 65.3319 22 64.6994 21.875V4.375C64.0668 4.125 63.4343 3.75 62.8018 3.5V60H68.621V36C67.9884 35.875 67.3559 35.875 66.7234 35.875V22.375H66.5969Z" fill="white" />
+    </svg>
+    <div className="flex gap-[22px] text-[20px] leading-[-0.5px] absolute ml-[700px] mt-[200px] items-center opacity-50">
+      <div className="w-[150px] h-[150px] flex justify-center items-center text-white bg-black rounded-full">{loading}</div>
+      <span>Загрузка</span>
+    </div>
+    {/* Загрузка {loading} */}
   </div>)
 }

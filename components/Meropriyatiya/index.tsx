@@ -76,7 +76,7 @@ export default function Activity({ title, text, tags }: {
 
   }, []);
 
-  const arr = [1, 2, 3, 4];
+  const arr = [1, 2, 3];
 
   return (
     <div className="relative">
@@ -91,7 +91,6 @@ export default function Activity({ title, text, tags }: {
       {arr.map((elem, index) => (<div key={index} className={`flex flex-col justify-center relative min-h-screen pt-[88px] pb-[84px] ${index}`} ref={e => elements.current[index] = e}>
         <div className="absolute w-full z-10">
           <Image className="m-auto mt-[200px]" src="/img.png" width={500} height={500} alt="" />
-          {/* <div className="w-[100px] h-[100px] bg-red-400" /> */}
         </div>
         <div className={`meroprInfo text-[140px] font-[400] text-center z-10 left-0 right-0 bottom-0 top-0 text-white`}>{text}</div>
         {/* <div className="absolute max-w-[600px] flex justify-center items-center m-auto left-0 right-0 top-0 bottom-0">
