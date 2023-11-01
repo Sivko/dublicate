@@ -138,7 +138,7 @@ const FrameScrollVideo = ({ scrollHeight = "10000", width = "1920", height = "10
 
     render();
     // console.log(frameIndex);
-    if (frameIndex > 70) {
+    if (frameIndex > 55) {
       gsap.to('#wrapper', {
         yoyo: true,
         margin: "40 40 40 40",
