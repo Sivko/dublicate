@@ -22,9 +22,9 @@ export default function Loader({ loading, setLoading }: { loading: any, setLoadi
       img.src = getCurrentFrame(i);
       // if (i == 99) {
       img.onload = (e: any) => {
-        const lorem = e.currentTarget.src.split('/')
-        lorem[lorem.length - 1].replace('.png', '')
-        setLoading((prev: any) => Number(lorem[lorem.length - 1].replace('.png', '')) > prev ? Number(lorem[lorem.length - 1].replace('.png', '')) : prev)
+        const file = e.currentTarget.src.split('/')
+        const numerFile = file[file.length-1].replace('ezgif-frame-', '').replace('.webp')
+        setLoading((prev: any) => Number(numerFile) > prev ? Number(numerFile) : prev)
       }
 
       // }
